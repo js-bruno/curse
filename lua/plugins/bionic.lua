@@ -1,5 +1,6 @@
 return {
   'FluxxField/bionic-reading.nvim',
+  enabled=false,
   config = function()
     require('bionic-reading').setup({
       -- determines if the file types below will be

@@ -4,7 +4,6 @@
 </p>
 
 ## things to be done <o__0>
-- [x] Update nvim to 0.10
 - [ ] Make terminal enable italic fonts in nvim editor colorscheme
 - [ ] Fix tmux not loading italic fonts on Neovim
 - [ ] Use tab to alternate through marked pages and let tab navigation go to Arrow
@@ -15,7 +14,6 @@
 - [ ] Telescope that shows all manuals
 - [ ] Telescope that shows all git commits
 - [ ] Way to show git diff from last commit
-- [ ] Yeet config for Go and Pythonor go and python
 
 
 ## How to install this config ?
