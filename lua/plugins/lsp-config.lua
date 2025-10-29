@@ -27,18 +27,30 @@ return {
         },
         provideFormatter = true
       }
-      require("lspconfig").html.setup { capabilities = capabilities, init_options = init_options }
+      vim.lsp.enable('nixd')
       require("lspconfig").lua_ls.setup {}
       require("lspconfig").gopls.setup {}
-      -- vim.lsp.enable('gopls')
-      vim.lsp.enable('nixd')
-      -- require 'lspconfig'.pyright.setup {}
-      -- vim.lsp.enable('basedpyright')
-      require'lspconfig'.volar.setup{
-        filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'}
+      require("lspconfig").html.setup {
+        capabilities = capabilities,
+        init_options = init_options
       }
-      require'lspconfig'.ts_ls.setup{}
-      -- require 'lspconfig'.pyrigh.setup {
+
+      -- require("lspconfig").ts_ls.setup {
+      --   on_attach = on_attach,
+      --   capabilities = capabilities,
+      --   init_options = {
+      --     plugins = { -- I think this was my breakthrough that made it work
+      --       {
+      --         name = "@vue/typescript-plugin",
+      --         location = "/usr/local/lib/node_modules/@vue/language-server",
+      --         languages = { "vue" },
+      --       },
+      --     },
+      --   },
+      --   filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+      -- }
+
+      require("lspconfig").volar.setup {}
       require 'lspconfig'.pylsp.setup {
         settings = {
           pylsp = {

@@ -1,3 +1,23 @@
+vim.api.nvim_create_autocmd({ 'UiEnter', 'ColorScheme' }, {
+  callback = function()
+    -- 1.
+    vim.cmd[[
+      hi TabLineFill gui=nocombine
+      hi WinBar gui=nocombine
+    ]]
+    -- 2.
+    vim.cmd[[
+      hi TabLineFill guibg=none
+      hi WinBar gui=none
+    ]]
+    -- 3.
+    vim.cmd[[
+      hi! link TabLineFill Normal
+      hi! link WinBar Normal
+    ]]
+  end
+})
+
 return {
 	"folke/twilight.nvim",
   config = function ()

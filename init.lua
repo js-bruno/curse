@@ -21,10 +21,30 @@ require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/lua/snippets/
 
 vim.cmd([[
   try
-    colorscheme vitesse
+    colorscheme desert
     set background=dark
   catch /^Vim\%((\a\+)\)\=:E185/
     colorscheme default
     set background=dark
   endtry
 ]])
+
+vim.api.nvim_create_autocmd({ 'UiEnter', 'ColorScheme' }, {
+  callback = function()
+    -- 1.
+    vim.cmd[[
+      hi TabLineFill gui=nocombine
+      hi WinBar gui=nocombine
+    ]]
+    -- 2.
+    vim.cmd[[
+      hi TabLineFill guibg=none
+      hi WinBar gui=none
+    ]]
+    -- 3.
+    vim.cmd[[
+      hi! link TabLineFill Normal
+      hi! link WinBar Normal
+    ]]
+  end
+})

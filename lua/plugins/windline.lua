@@ -1,6 +1,6 @@
 return {
   "windwp/windline.nvim",
-  enabled=false,
+  enabled=true,
   config = function ()
     require('wlsample.vscode')
   end
