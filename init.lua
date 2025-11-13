@@ -22,6 +22,7 @@ require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/lua/snippets/
 vim.cmd([[
   try
     colorscheme desert
+    color vitesse
     set background=dark
   catch /^Vim\%((\a\+)\)\=:E185/
     colorscheme default

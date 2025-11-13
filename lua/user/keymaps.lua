@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>j", ":Yeet<cr>", {})
+-- vim.keymap.set("n", "<leader>j", ":Yeet<cr>", {})
 vim.keymap.set("n", "<A-1>", "1gt", {})
 vim.keymap.set("n", "<A-2>", "2gt", {})
 vim.keymap.set("n", "<A-3>", "3gt", {})
@@ -12,8 +12,7 @@ vim.keymap.set("n", "<A-7>", "7gt", {})
 vim.keymap.set(
 	"n",
 	"<leader>se",
-	function() require("scissors").editSnippet() end,
-	{ desc = "Snippet: Edit" }
+	function() require("scissors").editSnippet() end, { desc = "Snippet: Edit" }
 )
 -- when used in visual mode, prefills the selection as snippet body
 vim.keymap.set(
