@@ -10,16 +10,16 @@ vim.keymap.set("n", "<A-7>", "7gt", {})
 
 -- scissors SNIPETS
 vim.keymap.set(
-	"n",
-	"<leader>se",
-	function() require("scissors").editSnippet() end, { desc = "Snippet: Edit" }
+  "n",
+  "<leader>se",
+  function() require("scissors").editSnippet() end, { desc = "Snippet: Edit" }
 )
 -- when used in visual mode, prefills the selection as snippet body
 vim.keymap.set(
-	{ "n", "x" },
-	"<leader>sa",
-	function() require("scissors").addNewSnippet() end,
-	{ desc = "Snippet: Add" }
+  { "n", "x" },
+  "<leader>sa",
+  function() require("scissors").addNewSnippet() end,
+  { desc = "Snippet: Add" }
 )
 
 -- GOLANG REMAPS
@@ -51,7 +51,7 @@ vim.keymap.set("n", "<leader>S", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 
 vim.keymap.set("i", "jk", "<ESC>", {})
 vim.keymap.set("n", "<leader>w", ":w<cr>", {})
-vim.keymap.set("n", "<leader>q", ":bd<cr>", {})
+-- vim.keymap.set("n", "<leader>q", ":bd<cr>", {})
 
 vim.keymap.set("n", "<Tab>", ":tabNext<CR>", {})
 vim.keymap.set("n", "<leader><Tab>", ":tabnew<CR>", {})
@@ -76,7 +76,7 @@ vim.keymap.set("n", "<C-Down>", ":resize -2<CR>", {})
 vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>", {})
 vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", {})
 
-          -- Create a keymap for
+-- Create a keymap for
 -- vim.keymap.set("n", "<learder>t", vim.diagnostic.open_float)
 -- vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
 -- vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
@@ -119,26 +119,29 @@ function keymaps.declareTelescopeKeymaps()
 end
 
 function keymaps.declareLPSKeymaps()
-  vim.keymap.set("n", "K", vim.lsp.buf.signature_help, {})
+  -- vim.keymap.set("n", "K", vim.lsp.buf.signature_help, {})
+  vim.keymap.set('n', 'K', function()
+    vim.lsp.buf.hover { border = "single", max_height = 25, max_width = 120 }
+  end, { desc = "Hover documentation" })
   -- vim.keymap.set("n",, vim.lsp.buf.hover, {})
   -- vim.keymap.set("n", "gb", "<C-^>")
-  vim.keymap.set("n", "<leader>lp",  "<cmd>LspStop<cr>", { desc = "Go To Declaration" })
+  vim.keymap.set("n", "<leader>lp", "<cmd>LspStop<cr>", { desc = "Go To Declaration" })
   -- vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "Go To Declaration" })
   vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to Definition" })
-  vim.keymap.set("n", "gl", function ()
+  vim.keymap.set("n", "gl", function()
     vim.cmd("vsplit")
     vim.lsp.buf.definition()
   end, { desc = "Vertical Split And Go to Definition" })
 
-  vim.keymap.set("n", "gD", function ()
+  vim.keymap.set("n", "gD", function()
     vim.cmd("tab split")
     vim.lsp.buf.definition()
   end, { desc = "Split And Go to Definition" })
 
-  vim.keymap.set("n", "gI", vim.lsp.buf.implementation, { desc = "Go to Implementation" })
-  vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
-  vim.keymap.set("n", "ge", vim.lsp.buf.references, {})
-  vim.keymap.set("n", "gr", vim.lsp.buf.rename, {})
+  -- vim.keymap.set("n", "gI", vim.lsp.buf.implementation, { desc = "Go to Implementation" })
+  -- vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
+  -- vim.keymap.set("n", "ge", vim.lsp.buf.references, {})
+  -- vim.keymap.set("n", "gr", vim.lsp.buf.rename, {})
 
   vim.keymap.set("n", "<space>bf", vim.lsp.buf.format, {})
 
@@ -155,6 +158,6 @@ function keymaps.declareLPSKeymaps()
   --     end
   --   })
   -- end
-
 end
+
 return keymaps

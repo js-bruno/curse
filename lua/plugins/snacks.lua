@@ -10,9 +10,24 @@ return {
     dashboard = { enabled = false },
     explorer = { enabled = false },
     bigfile = { enabled = true },
+    ---@class snacks.layout.Config
+    ---@field show? boolean show the layout on creation (default: true)
+    ---@field wins table<string, snacks.win> windows to include in the layout
+    ---@field layout snacks.layout.Box layout definition
+    ---@field fullscreen? boolean open in fullscreen
+    ---@field hidden? string[] list of windows that will be excluded from the layout (but can be toggled)
+    ---@field on_update? fun(layout: snacks.layout)
+    ---@field on_update_pre? fun(layout: snacks.layout)
+    ---@field on_close? fun(layout: snacks.layout)
+    layout = {
+      enabled = true,
+      width = 0.6,
+      height = 0.6,
+      zindex = 50,
+    },
     indent = {
       priority = 1,
-      enabled = true, -- enable indent guides
+      enabled = false, -- enable indent guides
       char = "│",
       only_scope = false, -- only show indent guides of the scope
       only_current = false, -- only show indent guides in the current window
@@ -20,7 +35,7 @@ return {
       -- can be a list of hl groups to cycle through
       -- hl = {
       --     "SnacksIndent1",
-      --     "SnacksIndent2",
+      --     "SnacksIndent2",ls
       --     "SnacksIndent3",
       --     "SnacksIndent4",
       --     "SnacksIndent5",
@@ -53,8 +68,9 @@ return {
         return vim.g.snacks_scroll ~= false and vim.b[buf].snacks_scroll ~= false and vim.bo[buf].buftype ~= "terminal"
       end,
     },
-    statuscolumn = { enabled = false },
+    statuscolumn = { enabled = true },
     words = { enabled = true },
+    bufdelete = { enabled = true },
   },
   keys = {
     { "<leader>ss", function() Snacks.picker.lsp_symbols() end, desc = "LSP Symbols" },
@@ -64,5 +80,11 @@ return {
     { "<leader>sB", function() Snacks.picker.grep_buffers() end, desc = "Grep Open Buffers" },
     { "<leader>sg", function() Snacks.picker.grep() end, desc = "Grep" },
     { "<leader>sw", function() Snacks.picker.grep_word() end, desc = "Visual selection or word", mode = { "n", "x" } },
+    { "<leader>q", function() Snacks.bufdelete() end, desc = "Visual selection or word", mode = { "n", "x" } },
+    { "gd", function() Snacks.picker.lsp_definitions() end, desc = "Goto Definition" },
+    { "gD", function() Snacks.picker.lsp_declarations() end, desc = "Goto Declaration" },
+    { "gr", function() Snacks.picker.lsp_references() end, nowait = true, desc = "References" },
+    { "gI", function() Snacks.picker.lsp_implementations() end, desc = "Goto Implementation" },
+    { "gy", function() Snacks.picker.lsp_type_definitions() end, desc = "Goto T[y]pe Definition" },
   }
 }

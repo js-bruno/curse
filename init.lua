@@ -1,6 +1,5 @@
 require("user.keymaps")
-require("user.opt")
--- Lazy startup
+require("user.opt") -- Lazy startup
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
@@ -21,8 +20,7 @@ require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/lua/snippets/
 
 vim.cmd([[
   try
-    colorscheme desert
-    color vitesse
+    color catppuccin
     set background=dark
   catch /^Vim\%((\a\+)\)\=:E185/
     colorscheme default
