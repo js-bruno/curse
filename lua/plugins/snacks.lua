@@ -35,7 +35,7 @@ return {
       -- can be a list of hl groups to cycle through
       -- hl = {
       --     "SnacksIndent1",
-      --     "SnacksIndent2",ls
+      --     "SnacksIndent2",
       --     "SnacksIndent3",
       --     "SnacksIndent4",
       --     "SnacksIndent5",
@@ -73,7 +73,7 @@ return {
     bufdelete = { enabled = true },
   },
   keys = {
-    { "<leader>ss", function() Snacks.picker.lsp_symbols() end, desc = "LSP Symbols" },
+    { "<leader>sa", function() Snacks.picker.lsp_symbols() end, desc = "LSP Symbols" },
     { "<leader>ze",  function() Snacks.zen() end, desc = "Toggle Zen Mode" },
     { "<leader>zE",  function() Snacks.zen.zoom() end, desc = "Toggle Zoom" },
     { "<leader>sb", function() Snacks.picker.lines() end, desc = "Buffer Lines" },
@@ -86,5 +86,6 @@ return {
     { "gr", function() Snacks.picker.lsp_references() end, nowait = true, desc = "References" },
     { "gI", function() Snacks.picker.lsp_implementations() end, desc = "Goto Implementation" },
     { "gy", function() Snacks.picker.lsp_type_definitions() end, desc = "Goto T[y]pe Definition" },
+    { "<leader>cL", function() Snacks.picker.diagnostics_buffer() end, desc = "Buffer Diagnostics" },
   }
 }

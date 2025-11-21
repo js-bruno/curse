@@ -47,7 +47,10 @@ vim.keymap.set("n", "N", "Nzzzv", {})
 
 
 vim.keymap.set("x", "<leader>p", "\"_dP", {})
-vim.keymap.set("n", "<leader>S", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+vim.keymap.set("n", "<leader>S", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], {desc= "Substitute word"})
+vim.keymap.set("v", "<leader>S", function()
+  require("spectre").open_visual()
+end, { desc = "Search & Replace selection" })
 
 vim.keymap.set("i", "jk", "<ESC>", {})
 vim.keymap.set("n", "<leader>w", ":w<cr>", {})

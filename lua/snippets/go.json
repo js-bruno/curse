@@ -1,0 +1,1 @@
+{"test":{"prefix":"test","body":["func TestFUNC(t *testing.T) {","","}"]}}
