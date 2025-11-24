@@ -1,1 +1,1 @@
-{"test":{"prefix":"test","body":["func TestFUNC(t *testing.T) {","","}"]}}
+{"testMain":{"body":["func TestMain(m *testing.M){","","}"],"prefix":"testMain"},"test":{"prefix":"test","body":["func TestFUNC(t *testing.T) {","","}"]}}

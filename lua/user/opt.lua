@@ -10,7 +10,8 @@ vim.opt.autoindent = true
 vim.opt.wrap = false
 vim.opt.sidescrolloff = 12
 vim.opt.scrolloff = 3
-vim.opt.tabstop = 2 vim.opt.swapfile = false
+vim.opt.tabstop = 2
+vim.opt.swapfile = false
 vim.opt.cmdheight = 1
 vim.opt.mouse = a
 vim.opt.cursorline = true

@@ -1,4 +1,5 @@
 vim.g.mapleader = " "
+vim.g.maplocalleader = ","
 -- vim.keymap.set("n", "<leader>j", ":Yeet<cr>", {})
 vim.keymap.set("n", "<A-1>", "1gt", {})
 vim.keymap.set("n", "<A-2>", "2gt", {})
@@ -24,6 +25,7 @@ vim.keymap.set(
 
 -- GOLANG REMAPS
 -- vim.keymap.set("n", "<space>gb", dap.run_to_cursor)
+vim.keymap.set("n", "<C-q>", ":q<CR>", {})
 vim.keymap.set("n", "<leader>ss", ":GoFillStruct<CR>", {})
 vim.keymap.set("n", "<leader>sd", ":GoIfErr<CR>", {})
 -- vim.keymap.set("n", "<leader>ii", ":GoDebug<CR>", {})
@@ -48,9 +50,6 @@ vim.keymap.set("n", "N", "Nzzzv", {})
 
 vim.keymap.set("x", "<leader>p", "\"_dP", {})
 vim.keymap.set("n", "<leader>S", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], {desc= "Substitute word"})
-vim.keymap.set("v", "<leader>S", function()
-  require("spectre").open_visual()
-end, { desc = "Search & Replace selection" })
 
 vim.keymap.set("i", "jk", "<ESC>", {})
 vim.keymap.set("n", "<leader>w", ":w<cr>", {})
