@@ -1,6 +1,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
--- vim.keymap.set("n", "<leader>j", ":Yeet<cr>", {})
+
+vim.keymap.set("n", "<leader>j", ":Yeet<cr>", {})
 vim.keymap.set("n", "<A-1>", "1gt", {})
 vim.keymap.set("n", "<A-2>", "2gt", {})
 vim.keymap.set("n", "<A-3>", "3gt", {})
@@ -53,7 +54,7 @@ vim.keymap.set("n", "<leader>S", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 
 vim.keymap.set("i", "jk", "<ESC>", {})
 vim.keymap.set("n", "<leader>w", ":w<cr>", {})
--- vim.keymap.set("n", "<leader>q", ":bd<cr>", {})
+vim.keymap.set("n", "<leader>q", ":bd<cr>", {})
 
 vim.keymap.set("n", "<Tab>", ":tabNext<CR>", {})
 vim.keymap.set("n", "<leader><Tab>", ":tabnew<CR>", {})
@@ -87,6 +88,7 @@ vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", {})
 
 vim.keymap.set("n", "<leader>,", ":GrugFar<cr>", {})
 local keymaps = {}
+
 function keymaps.declareTelescopeKeymaps()
   local mode = "n"
 
@@ -96,6 +98,7 @@ function keymaps.declareTelescopeKeymaps()
     "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false, find_command = {'rg', '--files', '--hidden', '-g', '!.git' } }))<cr>",
     { desc = "Open Find_Files telescope with a simple dropdown searcher" }
   )
+  vim.keymap.set(mode, "<c-t>", ":Telescope live_grep<cr>", {})
   -- vim.keymap.set(mode, "<leader>e", ":Telescope buffers initial_mode=normal<cr>", {})
 
   -- vim.keymap.set(
@@ -104,7 +107,6 @@ function keymaps.declareTelescopeKeymaps()
   --   "<cmd>lua require'telescope.builtin'.buffers(require('telescope.themes').get_dropdown({ initial_mode='normal', previewer = false, find_command = {'rg', '--files', '--hidden', '-g', '!.git' } }))<cr>",
   --   { desc = "Open Find_Files telescope with a simple dropdown searcher" }
   -- )
-  vim.keymap.set(mode, "<c-t>", ":Telescope live_grep<cr>", {})
   vim.keymap.set(
     mode,
     "<leader>kj",
