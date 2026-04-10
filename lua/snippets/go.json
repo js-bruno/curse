@@ -1,1 +1,1 @@
-{"test":{"prefix":"test","body":["func TestFUNC(t *testing.T) {","","}"]},"testMain":{"body":["func TestMain(m *testing.M){","","}"],"prefix":"testMain"}}
+{"test":{"body":["func TestFUNC(t *testing.T) {","","}"],"prefix":"test"},"testMain":{"body":["func TestMain(m *testing.M){","","}"],"prefix":"testMain"},"range":{"prefix":"ranges","body":["for key, value := range headers {","\treq.Header.Add(key, value)","}"]},"ss":{"body":["type defaultStruct struct {","\tfoo  string","\tname string","}"],"prefix":"str"}}
