@@ -74,11 +74,9 @@ return {
   },
   keys = {
     { "<leader>.",  function() Snacks.scratch() end, desc = "Toggle Scratch Buffer" },
-    { "<leader><space>", function() Snacks.picker.grep_word() end, desc = "Visual selection or word", mode = { "n", "x" } },
+    -- { "<leader><space>", function() Snacks.picker.grep_word() end, desc = "Visual selection or word", mode = { "n", "x" } },
     { "<leader>n", function() Snacks.picker.notifications() end, desc = "Notification History" },
     { "<leader>sa", function() Snacks.picker.lsp_symbols() end, desc = "LSP Symbols" },
-    { "<leader>ze",  function() Snacks.zen() end, desc = "Toggle Zen Mode" },
-    { "<leader>zE",  function() Snacks.zen.zoom() end, desc = "Toggle Zoom" },
     { "<leader>/", function() Snacks.picker.lines() end, desc = "Buffer Lines" },
     { "<leader>q", function() Snacks.bufdelete() end, desc = "Visual selection or word", mode = { "n", "x" } },
     { "<leader>Q", ":bd<cr>", desc = "Visual selection or word", mode = { "n", "x" } },

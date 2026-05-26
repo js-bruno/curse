@@ -7,10 +7,10 @@ return { "anuvyklack/windows.nvim",
       vim.o.winwidth = 50
       vim.o.winminwidth = 10
       vim.o.equalalways = true
-      require('windows').setup()
-    vim.keymap.set('n', '<C-w>z', cmd 'WindowsMaximize')
-    vim.keymap.set('n', '<C-w>_', cmd 'WindowsMaximizeVertically')
-    vim.keymap.set('n', '<C-w>|', cmd 'WindowsMaximizeHorizontally')
-    vim.keymap.set('n', '<C-w>=', cmd 'WindowsEqualize')
+    require('windows').setup()
+    -- vim.keymap.set('n', '<C-w>z', cmd 'WindowsMaximize')
+    -- vim.keymap.set('n', '<C-w>_', cmd 'WindowsMaximizeVertically')
+    -- vim.keymap.set('n', '<C-w>|', cmd 'WindowsMaximizeHorizontally')
+    -- vim.keymap.set('n', '<C-w>=', cmd 'WindowsEqualize')
    end
 }

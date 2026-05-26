@@ -1,7 +1,12 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 
-vim.keymap.set("n", "<leader>j", ":Yeet<cr>", {})
+
+vim.keymap.set("n", "<leader>ee", ":Gitsigns preview_hunk<CR>", {})
+vim.keymap.set("n", "<leader>rr", ":Gitsigns toggle_current_line_blame<CR>", {})
+vim.keymap.set("n", "<leader>re", ":Gitsigns setqflist all<CR>", {})
+
+vim.keymap.set("n", "<leader><space>", ":ZenMode<cr>", {})
 vim.keymap.set("n", "<A-1>", "1gt", {})
 vim.keymap.set("n", "<A-2>", "2gt", {})
 vim.keymap.set("n", "<A-3>", "3gt", {})

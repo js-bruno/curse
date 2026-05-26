@@ -6,7 +6,6 @@ return {
         opts = {},
       config = function ()
         vim.keymap.set( "n", "<leader>dv", ":DapViewToggle<cr>")
-      
       end
     },
 }

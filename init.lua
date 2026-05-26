@@ -1,3 +1,5 @@
+vim.cmd("language ru_RU.UTF-8") -- Soviet Mode [ON]
+
 require("user.keymaps")
 require("user.opt") -- Lazy startup
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"

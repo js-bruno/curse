@@ -1,5 +1,6 @@
 return {
   "Hashino/doing.nvim",
+  enabled=false,
   lazy = false,
   opts = {},
   keys = {
