@@ -146,5 +146,11 @@ return {
     --     vim.g.zenbones_darken_comments = 45
     --     vim.cmd.colorscheme('zenbones')
     -- end
-  }
+  },
+  {
+  "craftzdog/solarized-osaka.nvim",
+  lazy = false,
+  priority = 1000,
+  opts = {},
+}
 }

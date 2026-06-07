@@ -1,7 +1,8 @@
-vim.cmd("language ru_RU.UTF-8") -- Soviet Mode [ON]
+vim.cmd("language ru_RU.UTF-8")
 
 require("user.keymaps")
-require("user.opt") -- Lazy startup
+require("user.opt")
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
@@ -9,7 +10,7 @@ if not vim.loop.fs_stat(lazypath) then
 		"clone",
 		"--filter=blob:none",
 		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable", -- latest stable release
+		"--branch=stable",
 		lazypath,
 	})
 end
@@ -22,7 +23,7 @@ require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/lua/snippets/
 
 vim.cmd([[
   try
-    color darkplus
+    color solarized-osaka
     set background=dark
   catch /^Vim\%((\a\+)\)\=:E185/
     colorscheme default

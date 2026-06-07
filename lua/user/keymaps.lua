@@ -4,6 +4,7 @@ vim.g.maplocalleader = ","
 
 vim.keymap.set("n", "<leader>ee", ":Gitsigns preview_hunk<CR>", {})
 vim.keymap.set("n", "<leader>rr", ":Gitsigns toggle_current_line_blame<CR>", {})
+-- vim.keymap.set("n", "<leader>re", ":Gitsigns setloclist all<CR>", {})
 vim.keymap.set("n", "<leader>re", ":Gitsigns setqflist all<CR>", {})
 
 vim.keymap.set("n", "<leader><space>", ":ZenMode<cr>", {})
@@ -14,20 +15,6 @@ vim.keymap.set("n", "<A-4>", "4gt", {})
 vim.keymap.set("n", "<A-5>", "5gt", {})
 vim.keymap.set("n", "<A-6>", "6gt", {})
 vim.keymap.set("n", "<A-7>", "7gt", {})
-
--- scissors SNIPETS
-vim.keymap.set(
-  "n",
-  "<leader>se",
-  function() require("scissors").editSnippet() end, { desc = "Snippet: Edit" }
-)
--- when used in visual mode, prefills the selection as snippet body
-vim.keymap.set(
-  { "n", "x" },
-  "<leader>sa",
-  function() require("scissors").addNewSnippet() end,
-  { desc = "Snippet: Add" }
-)
 
 -- GOLANG REMAPS
 -- vim.keymap.set("n", "<space>gb", dap.run_to_cursor)
