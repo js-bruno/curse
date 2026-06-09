@@ -21,3 +21,5 @@ rm -rf ~/.config/nvim && \
 cp -r <repository-name>/config/nvim ~/.config/
 ```
 ** run *nvim* in a terminal
+
+<img src="https://pixelsafari.neocities.org/dividers/more/fire2.gif" />
