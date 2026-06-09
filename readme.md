@@ -9,10 +9,6 @@
 - [ ] Use tab to alternate through marked pages and let tab navigation go to Arrow
 - [ ] Create a shortcuts to navigate throw git changes in the file
 - [ ] Implement undo tree
-
-## features to copy from astronvim e.e
-- [ ] Telescope that shows all manuals
-- [ ] Telescope that shows all git commits
 - [ ] Way to show git diff from last commit
 
 
