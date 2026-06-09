@@ -2,7 +2,23 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 
 
-vim.keymap.set("n", "<leader>ee", ":Gitsigns preview_hunk<CR>", {})
+
+
+
+
+--
+-- Open mini.files centered on the directory of the current active buffer
+-- vim.keymap.set("n", "<leader>e", function()
+--   require("mini.files").open(vim.api.nvim_buf_get_name(0), true)
+-- end, { desc = "Open mini.files (directory of current file)" })
+--
+-- -- Open mini.files centered on the current working directory (cwd)
+-- vim.keymap.set("n", "<C-B>", function()
+--   require("mini.files").open(vim.uv.cwd(), true)
+-- end, { desc = "Open mini.files (cwd)" })
+
+
+-- vim.keymap.set("n", "<leader>ee", ":Gitsigns preview_hunk<CR>", {})
 vim.keymap.set("n", "<leader>rr", ":Gitsigns toggle_current_line_blame<CR>", {})
 -- vim.keymap.set("n", "<leader>re", ":Gitsigns setloclist all<CR>", {})
 vim.keymap.set("n", "<leader>re", ":Gitsigns setqflist all<CR>", {})

@@ -16,7 +16,7 @@ return {
           hijack_netrw_behavior = "disabled",
         }
     })
-    vim.keymap.set('n', '<C-b>', ':Neotree toggle source=filesystem reveal=true position=right<CR>', {})
-    vim.keymap.set('n', '<C-n>', ':Neotree toggle source=git_status reveal=true position=right<CR>', {})
+    -- vim.keymap.set('n', '<C-b>', ':Neotree toggle source=filesystem reveal=true position=right<CR>', {})
+    vim.keymap.set('n', '<C-b>', ':Neotree toggle source=git_status reveal=true position=right<CR>', {})
   end
 }
