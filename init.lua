@@ -1,6 +1,8 @@
+vim.cmd("language ru_RU.UTF-8")
+
 require("user.keymaps")
 require("user.opt")
--- Lazy startup
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
@@ -8,7 +10,7 @@ if not vim.loop.fs_stat(lazypath) then
 		"clone",
 		"--filter=blob:none",
 		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable", -- latest stable release
+		"--branch=stable",
 		lazypath,
 	})
 end
@@ -21,10 +23,30 @@ require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/lua/snippets/
 
 vim.cmd([[
   try
-    colorscheme darkplus
+    color solarized-osaka
     set background=dark
   catch /^Vim\%((\a\+)\)\=:E185/
     colorscheme default
     set background=dark
   endtry
 ]])
+
+vim.api.nvim_create_autocmd({ 'UiEnter', 'ColorScheme' }, {
+  callback = function()
+    -- 1.
+    vim.cmd[[
+      hi TabLineFill gui=nocombine
+      hi WinBar gui=nocombine
+    ]]
+    -- 2.
+    vim.cmd[[
+      hi TabLineFill guibg=none
+      hi WinBar gui=none
+    ]]
+    -- 3.
+    vim.cmd[[
+      hi! link TabLineFill Normal
+      hi! link WinBar Normal
+    ]]
+  end
+})

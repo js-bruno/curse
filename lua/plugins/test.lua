@@ -5,7 +5,6 @@ return {
   },
   config = function ()
     vim.cmd("let test#strategy = 'vimux'")
-
   end
 }
 

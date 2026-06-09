@@ -8,13 +8,14 @@ return {
     },
     config = function()
       local dap = require "dap"
-      -- local ui = require "dapui"
+      local dap_go = require "dap-go"
 
-      require("dap-go").setup()
+      dap_go.setup()
       require("nvim-dap-virtual-text").setup({highlight_changed_variables = false, all_frames = true})
       dap.adapters.go = {
         type = "server",
-        port = "${port}", executable = {
+        port = "${port}",
+        executable = {
           command = "dlv",
           args = { "dap", "-l", "127.0.0.1:${port}" },
         },
@@ -40,30 +41,14 @@ return {
         }
       end
 
-
-      -- Eval var under cursor
-      -- vim.keymap.set("n", "<space>?", function() require("dapui").eval(nil, { enter = true }) end)
       vim.keymap.set("n", "<space>b", dap.toggle_breakpoint)
-
       vim.keymap.set("n", "<leader>dt", dap.toggle_breakpoint)
       vim.keymap.set("n", "<leader>dc", dap.continue)
+      vim.keymap.set("n", "<leader>dm", dap_go.debug_test)
       vim.keymap.set("n", "<leader>dx", dap.terminate)
       vim.keymap.set("n", "<leader>dr", dap.restart)
       vim.keymap.set("n", "<leader>ds", dap.step_into)
       vim.keymap.set("n", "<leader>du", dap.step_over)
-
-      -- dap.listeners.before.attach.dapui_config = function()
-      --   ui.open()
-      -- end
-      -- dap.listeners.before.launch.dapui_config = function()
-      --   ui.open()
-      -- end
-      -- dap.listeners.before.event_terminated.dapui_config = function()
-      --   ui.close()
-      -- end
-      -- dap.listeners.before.event_exited.dapui_config = function()
-      --   ui.close()
-      -- end
     end,
   },
 }

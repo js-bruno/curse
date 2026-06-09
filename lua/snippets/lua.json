@@ -1,1 +1,1 @@
-{"vim keymap() + keymap":{"body":["vim.keymap.set(","\t{ \"n\", \"x\" },","\t\"<leader>sa\",","\tfunction() require(\"scissors\").addNewSnippet() end,","\t{ desc = \"Snippet: Add\" }",")"],"prefix":["vim keymap()","keymap"]}}
+{"teste":{"prefix":"teste","body":"vim.keymap.set(\"n\", \"<A-7>\", \"7gt\", {})"},"vim keymap() + keymap":{"prefix":["vim keymap()","keymap"],"body":["vim.keymap.set(","\t{ \"n\", \"x\" },","\t\"<leader>sa\",","\tfunction() require(\"scissors\").addNewSnippet() end,","\t{ desc = \"Snippet: Add\" }",")"]}}

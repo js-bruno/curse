@@ -14,7 +14,7 @@ return {
     completion = {
       ghost_text = {enabled = true },
       menu = {
-        auto_show = true
+        auto_show = false
       },
     },
     keymap = {

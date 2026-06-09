@@ -1,5 +1,29 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>j", ":Yeet<cr>", {})
+vim.g.maplocalleader = ","
+
+
+
+
+
+
+--
+-- Open mini.files centered on the directory of the current active buffer
+-- vim.keymap.set("n", "<leader>e", function()
+--   require("mini.files").open(vim.api.nvim_buf_get_name(0), true)
+-- end, { desc = "Open mini.files (directory of current file)" })
+--
+-- -- Open mini.files centered on the current working directory (cwd)
+-- vim.keymap.set("n", "<C-B>", function()
+--   require("mini.files").open(vim.uv.cwd(), true)
+-- end, { desc = "Open mini.files (cwd)" })
+
+
+-- vim.keymap.set("n", "<leader>ee", ":Gitsigns preview_hunk<CR>", {})
+vim.keymap.set("n", "<leader>rr", ":Gitsigns toggle_current_line_blame<CR>", {})
+-- vim.keymap.set("n", "<leader>re", ":Gitsigns setloclist all<CR>", {})
+vim.keymap.set("n", "<leader>re", ":Gitsigns setqflist all<CR>", {})
+
+vim.keymap.set("n", "<leader><space>", ":ZenMode<cr>", {})
 vim.keymap.set("n", "<A-1>", "1gt", {})
 vim.keymap.set("n", "<A-2>", "2gt", {})
 vim.keymap.set("n", "<A-3>", "3gt", {})
@@ -8,23 +32,9 @@ vim.keymap.set("n", "<A-5>", "5gt", {})
 vim.keymap.set("n", "<A-6>", "6gt", {})
 vim.keymap.set("n", "<A-7>", "7gt", {})
 
--- scissors SNIPETS
-vim.keymap.set(
-	"n",
-	"<leader>se",
-	function() require("scissors").editSnippet() end,
-	{ desc = "Snippet: Edit" }
-)
--- when used in visual mode, prefills the selection as snippet body
-vim.keymap.set(
-	{ "n", "x" },
-	"<leader>sa",
-	function() require("scissors").addNewSnippet() end,
-	{ desc = "Snippet: Add" }
-)
-
 -- GOLANG REMAPS
 -- vim.keymap.set("n", "<space>gb", dap.run_to_cursor)
+vim.keymap.set("n", "<C-q>", ":q<CR>", {})
 vim.keymap.set("n", "<leader>ss", ":GoFillStruct<CR>", {})
 vim.keymap.set("n", "<leader>sd", ":GoIfErr<CR>", {})
 -- vim.keymap.set("n", "<leader>ii", ":GoDebug<CR>", {})
@@ -48,7 +58,7 @@ vim.keymap.set("n", "N", "Nzzzv", {})
 
 
 vim.keymap.set("x", "<leader>p", "\"_dP", {})
-vim.keymap.set("n", "<leader>S", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+vim.keymap.set("n", "<leader>S", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], {desc= "Substitute word"})
 
 vim.keymap.set("i", "jk", "<ESC>", {})
 vim.keymap.set("n", "<leader>w", ":w<cr>", {})
@@ -77,7 +87,7 @@ vim.keymap.set("n", "<C-Down>", ":resize -2<CR>", {})
 vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>", {})
 vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", {})
 
-          -- Create a keymap for
+-- Create a keymap for
 -- vim.keymap.set("n", "<learder>t", vim.diagnostic.open_float)
 -- vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
 -- vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
@@ -86,6 +96,7 @@ vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", {})
 
 vim.keymap.set("n", "<leader>,", ":GrugFar<cr>", {})
 local keymaps = {}
+
 function keymaps.declareTelescopeKeymaps()
   local mode = "n"
 
@@ -95,6 +106,7 @@ function keymaps.declareTelescopeKeymaps()
     "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false, find_command = {'rg', '--files', '--hidden', '-g', '!.git' } }))<cr>",
     { desc = "Open Find_Files telescope with a simple dropdown searcher" }
   )
+  vim.keymap.set(mode, "<c-t>", ":Telescope live_grep<cr>", {})
   -- vim.keymap.set(mode, "<leader>e", ":Telescope buffers initial_mode=normal<cr>", {})
 
   -- vim.keymap.set(
@@ -103,7 +115,6 @@ function keymaps.declareTelescopeKeymaps()
   --   "<cmd>lua require'telescope.builtin'.buffers(require('telescope.themes').get_dropdown({ initial_mode='normal', previewer = false, find_command = {'rg', '--files', '--hidden', '-g', '!.git' } }))<cr>",
   --   { desc = "Open Find_Files telescope with a simple dropdown searcher" }
   -- )
-  vim.keymap.set(mode, "<c-t>", ":Telescope live_grep<cr>", {})
   vim.keymap.set(
     mode,
     "<leader>kj",
@@ -120,26 +131,29 @@ function keymaps.declareTelescopeKeymaps()
 end
 
 function keymaps.declareLPSKeymaps()
-  vim.keymap.set("n", "K", vim.lsp.buf.signature_help, {})
+  -- vim.keymap.set("n", "K", vim.lsp.buf.signature_help, {})
+  vim.keymap.set('n', 'K', function()
+    vim.lsp.buf.hover { border = "single", max_height = 25, max_width = 120 }
+  end, { desc = "Hover documentation" })
   -- vim.keymap.set("n",, vim.lsp.buf.hover, {})
   -- vim.keymap.set("n", "gb", "<C-^>")
-  vim.keymap.set("n", "<leader>lp",  "<cmd>LspStop<cr>", { desc = "Go To Declaration" })
+  vim.keymap.set("n", "<leader>lp", "<cmd>LspStop<cr>", { desc = "Go To Declaration" })
   -- vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "Go To Declaration" })
   vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to Definition" })
-  vim.keymap.set("n", "gl", function ()
+  vim.keymap.set("n", "gl", function()
     vim.cmd("vsplit")
     vim.lsp.buf.definition()
   end, { desc = "Vertical Split And Go to Definition" })
 
-  vim.keymap.set("n", "gD", function ()
+  vim.keymap.set("n", "gD", function()
     vim.cmd("tab split")
     vim.lsp.buf.definition()
   end, { desc = "Split And Go to Definition" })
 
-  vim.keymap.set("n", "gI", vim.lsp.buf.implementation, { desc = "Go to Implementation" })
-  vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
-  vim.keymap.set("n", "ge", vim.lsp.buf.references, {})
-  vim.keymap.set("n", "gr", vim.lsp.buf.rename, {})
+  -- vim.keymap.set("n", "gI", vim.lsp.buf.implementation, { desc = "Go to Implementation" })
+  -- vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
+  -- vim.keymap.set("n", "ge", vim.lsp.buf.references, {})
+  -- vim.keymap.set("n", "gr", vim.lsp.buf.rename, {})
 
   vim.keymap.set("n", "<space>bf", vim.lsp.buf.format, {})
 
@@ -156,6 +170,6 @@ function keymaps.declareLPSKeymaps()
   --     end
   --   })
   -- end
-
 end
+
 return keymaps
