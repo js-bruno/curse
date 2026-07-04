@@ -20,8 +20,6 @@ return {
       vim.lsp.enable('nixd')
       vim.lsp.enable('lua_ls')
       vim.lsp.enable('gopls')
-      -- vim.lsp.enable('volar')
-
       -- html precisa de config extra
       vim.lsp.config('html', {
         capabilities = capabilities,
