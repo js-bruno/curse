@@ -1,18 +1,9 @@
 ```
-[1;37m        ★   ★   ★   ★   ★   ★   ★   ★   ★   ★   ★   ★   ★   ★   ★   ★   ★   ★   [0m
+* redvim - a small neovim config *
+==================================
 
-[1;31m        ██████╗   ███████╗  ████████╗   ██████╗    ██╗  ██╗  ███╗   ███╗[0m
-[1;31m        ██╔══██╗  ██╔════╝  ██╔═══██╗   ██╔══██╗   ██║  ██║  ████╗ ████║[0m
-[1;31m        ██████╔╝  █████╗    ██║   ██║   ██████╔╝   ██║ ██╔╝  ██╔████╔██║[0m
-[1;31m        ██╔══██╗  ██╔══╝    ██║   ██║   ██╔══██╗   ██║██╔╝   ██║╚██╔╝██║[0m
-[1;31m        ██║  ██║  ███████╗  ████████║   ██████╔╝   █████╔╝   ██║ ╚═╝ ██║[0m
-[1;31m        ╚═╝  ╚═╝  ╚══════╝  ╚════════╝  ╚═════╝    ╚════╝    ╚═╝     ╚═╝[0m
+install  -> https://github.com/js-bruno/nvim-config
+wiki     -> https://github.com/js-bruno/nvim-config/wiki
 
-[1;37m        ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀[0m
-
-[1;37m          $ install → https://github.com/js-bruno/nvim-config[0m
-[1;37m          $ wiki    → https://github.com/js-bruno/nvim-config/wiki[0m
-
-[1;37m          ★  redvim v0.10.1 · solarized-osaka · maple mono nf · lazy.nvim  ★[0m
-[1;37m        ★   ★   ★   ★   ★   ★   ★   ★   ★   ★   ★   ★   ★   ★   ★   ★   ★   ★   [0m
+~*~ solarized-osaka | lazy.nvim | maple mono nf ~*~
 ```
