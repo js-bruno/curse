@@ -1,5 +1,6 @@
 {
     "diagnostics.disable": [
         "undefined-global"
-    ]
+    ],
+    "completion.autoRequire": false
 }

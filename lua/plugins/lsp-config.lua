@@ -11,16 +11,15 @@ return {
     },
   },
   {
-    -- lspconfig só para servidores que precisam de config extra
     "neovim/nvim-lspconfig",
     config = function()
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-      vim.lsp.enable('nixd')
-      vim.lsp.enable('lua_ls')
-      vim.lsp.enable('gopls')
-      -- html precisa de config extra
+      vim.lsp.config('nixd', {
+        capabilities = capabilities,
+      })
+
       vim.lsp.config('html', {
         capabilities = capabilities,
         init_options = {
@@ -29,25 +28,24 @@ return {
           provideFormatter = true,
         },
       })
-      vim.lsp.enable('html')
 
-      -- pylsp precisa de settings
-      vim.lsp.config('pylsp', {
+      vim.lsp.config("ts_ls", {
         settings = {
-          pylsp = {
-            plugins = {
-              mypy = { enabled = false },
-              pycodestyle = {
-                ignore = { 'W391' },
-                maxLineLength = 100,
-              },
+          typescript = {
+            inlayHints = {
+              includeInlayParameterNameHints = "all",
+              includeInlayFunctionParameterTypeHints = true,
+              includeInlayVariableTypeHints = true,
             },
           },
         },
       })
-      vim.lsp.enable('pylsp')
 
-      vim.o.winborder = 'double'
+      vim.lsp.enable('gopls')
+      vim.lsp.enable('lua_ls')
+      vim.lsp.enable('nixd')
+      vim.lsp.enable('html')
+      vim.lsp.enable('ts_ls')
 
       vim.api.nvim_create_autocmd('LspAttach', {
         callback = function(args)

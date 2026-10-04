@@ -4,26 +4,20 @@ return {
   version = "*",
   dependencies = {
     "SmiteshP/nvim-navic",
-    "nvim-tree/nvim-web-devicons", -- optional dependency
+    "nvim-tree/nvim-web-devicons",
   },
   opts = {
       theme = {
-        -- this highlight is used to override other highlights
-        -- you can take advantage of its `bg` and set a background throughout your winbar
-        -- (e.g. basename will look like this: { fg = "#c0caf5", bold = true })
         normal = { fg = "#c0caf5" },
 
-        -- these highlights correspond to symbols table from config
         ellipsis = { fg = "#737aa2" },
         separator = { fg = "#737aa2" },
         modified = { fg = "#737aa2" },
 
-        -- these highlights represent the _text_ of three main parts of barbecue
         dirname = { fg = "#737aa2" },
         basename = { bold = true },
         context = {},
 
-        -- these highlights are used for context/navic icons
         context_file = { fg = "#ac8fe4" },
         context_module = { fg = "#ac8fe4" },
         context_namespace = { fg = "#ac8fe4" },

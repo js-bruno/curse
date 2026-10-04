@@ -3,11 +3,9 @@ return {
   version = 'v1.12.3',
   keys = {
     { '<leader>e', function() require('bafa').toggle() end, desc = 'Bafa: buffer list' },
-    -- open directly with jump-labels visible
     { '<leader>E', function() require('bafa').toggle({ with_jump_labels = true }) end, desc = 'Bafa: buffer list (jump-labels)' },
   },
   opts = {
-    -- 🔔 Notification configuration
     notify = {
       -- Used for for feedback messages
       -- Anything that has a `vim.notify` like interface will work
@@ -17,7 +15,6 @@ return {
       provider = "vim.notify",
     },
     ui = {
-      -- 🪄 Rendering configuration
       render = {
         -- Custom buffer line format function, default is nil.
         -- The function receives a BafaUiBufferLine as argument

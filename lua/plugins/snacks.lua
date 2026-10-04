@@ -73,7 +73,8 @@ return {
     bufdelete = { enabled = true },
   },
   keys = {
-    { "<leader>.",  function() Snacks.scratch() end, desc = "Toggle Scratch Buffer" },
+    -- { "<leader>.",  function() Snacks.scratch() end, desc = "Toggle Scratch Buffer" },
+    -- { "<leader>.",  function() Snacks.scratch.select() end, desc = "Toggle Scratch Buffer" },
     -- { "<leader><space>", function() Snacks.picker.grep_word() end, desc = "Visual selection or word", mode = { "n", "x" } },
     { "<leader>n", function() Snacks.notifier.show_history() end, desc = "Notification History" },
     { "<leader>sa", function() Snacks.picker.lsp_symbols() end, desc = "LSP Symbols" },
