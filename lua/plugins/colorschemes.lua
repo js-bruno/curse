@@ -148,9 +148,23 @@ return {
     -- end
   },
   {
-  "craftzdog/solarized-osaka.nvim",
-  lazy = false,
-  priority = 1000,
-  opts = {},
-}
+    "craftzdog/solarized-osaka.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {
+      transparent = true,
+      styles = {
+        comments = { italic = false },
+        keywords = { italic = true },
+        functions = {},
+        variables = {},
+      },
+      on_highlights = function(highlights, colors)
+        highlights["@keyword.function"]   = { fg = colors.green500, italic = true }
+        highlights["@type"]               = { fg = colors.yellow500, italic = true }
+        highlights["@type.builtin"]       = { fg = colors.yellow500, italic = true }
+        highlights["@variable.parameter"] = { fg = colors.orange500, italic = true }
+      end,
+    },
+  }
 }
