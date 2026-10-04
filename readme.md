@@ -1,15 +1,18 @@
-<p align="center">
-   <img align="center" src="./lainvim_banner.svg" alt="welcome to lainvim" />
-</p>
-
-## How to install this config ?
-** [DOWNLOAD NVIMv0.10.1 NOW!!](https://github.com/neovim/neovim/blob/master/INSTALL.md)
-** substitute .config/nvim to this repository
 ```
-git clone https://github.com/js-bruno/nvim-config && \
-rm -rf ~/.config/nvim && \
-cp -r <repository-name>/config/nvim ~/.config/
-```
-** run *nvim* in a terminal
+[1;37m        ★   ★   ★   ★   ★   ★   ★   ★   ★   ★   ★   ★   ★   ★   ★   ★   ★   ★   [0m
 
-<img align="center" src="https://pixelsafari.neocities.org/dividers/more/fire2.gif" />
+[1;31m        ██████╗   ███████╗  ████████╗   ██████╗    ██╗  ██╗  ███╗   ███╗[0m
+[1;31m        ██╔══██╗  ██╔════╝  ██╔═══██╗   ██╔══██╗   ██║  ██║  ████╗ ████║[0m
+[1;31m        ██████╔╝  █████╗    ██║   ██║   ██████╔╝   ██║ ██╔╝  ██╔████╔██║[0m
+[1;31m        ██╔══██╗  ██╔══╝    ██║   ██║   ██╔══██╗   ██║██╔╝   ██║╚██╔╝██║[0m
+[1;31m        ██║  ██║  ███████╗  ████████║   ██████╔╝   █████╔╝   ██║ ╚═╝ ██║[0m
+[1;31m        ╚═╝  ╚═╝  ╚══════╝  ╚════════╝  ╚═════╝    ╚════╝    ╚═╝     ╚═╝[0m
+
+[1;37m        ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀[0m
+
+[1;37m          $ install → https://github.com/js-bruno/nvim-config[0m
+[1;37m          $ wiki    → https://github.com/js-bruno/nvim-config/wiki[0m
+
+[1;37m          ★  redvim v0.10.1 · solarized-osaka · maple mono nf · lazy.nvim  ★[0m
+[1;37m        ★   ★   ★   ★   ★   ★   ★   ★   ★   ★   ★   ★   ★   ★   ★   ★   ★   ★   [0m
+```
